@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Learning Hub | Free Biology Summaries</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header / Navbar -->
+    <header class="bg-emerald-600 text-white p-4 shadow-md text-center">
+        <h1 class="text-2xl font-bold tracking-wide">🎨 Visual Learning Hub</h1>
+        <p class="text-sm opacity-90">High-Quality AI Summary Sheets for Students</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto p-6">
+        
+        <!-- SECTION 1: HOMEPAGE (SUBJECT SELECTOR) -->
+        <section id="homepage" class="block text-center mt-8">
+            <h2 class="text-xl font-bold mb-4">Select a Subject to Start Learning</h2>
+            <div class="flex justify-center">
+                <!-- Biology Button -->
+                <button onclick="showPage('biology-page')" class="bg-white border-2 border-emerald-500 text-emerald-700 hover:bg-emerald-50 text-lg font-semibold px-8 py-6 rounded-xl shadow-sm cursor-pointer transition w-64">
+                    🧬 Biology Section
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION 2: BIOLOGY CHAPTERS LIST -->
+        <section id="biology-page" class="hidden mt-4">
+            <button onclick="showPage('homepage')" class="text-emerald-600 hover:underline mb-6 block font-medium cursor-pointer">← Back to Subjects</button>
+            <h2 class="text-xl font-bold mb-6 text-emerald-800">🧬 Biology Chapters</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Photosynthesis Card -->
+                <div onclick="showPage('photosynthesis-notes')" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 cursor-pointer hover:border-emerald-400 hover:shadow-md transition">
+                    <div class="h-32 bg-emerald-100 rounded-lg flex items-center justify-center text-4xl mb-4">🍃</div>
+                    <h3 class="text-lg font-bold">1. Photosynthesis</h3>
+                    <p class="text-sm text-gray-500 mt-1">Light reactions, Calvin cycle, and visual leaf processes.</p>
+                </div>
+                <!-- Transpiration Card -->
+                <div onclick="showPage('transpiration-notes')" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 cursor-pointer hover:border-emerald-400 hover:shadow-md transition">
+                    <div class="h-32 bg-teal-100 rounded-lg flex items-center justify-center text-4xl mb-4">💧</div>
+                    <h3 class="text-lg font-bold">2. Plant Transpiration</h3>
+                    <p class="text-sm text-gray-500 mt-1">Stomata movement, xylem transport, and water loss factors.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PHOTOSYNTHESIS NOTES -->
+        <section id="photosynthesis-notes" class="hidden mt-4 bg-white p-6 rounded-xl shadow-md border border-gray-100">
+            <button onclick="showPage('biology-page')" class="text-emerald-600 hover:underline mb-4 block font-medium cursor-pointer">← Back to Chapters</button>
+            <h2 class="text-2xl font-bold text-emerald-700 mb-2">Leaf Photosynthesis Summary</h2>
+            <p class="text-gray-600 text-sm mb-6">Class 10 / High School Curriculum Guide</p>
+            
+            <!-- Educational Image Placeholder -->
+            <div class="w-full bg-amber-50 border border-amber-200 text-amber-900 rounded-xl p-8 mb-6 text-center font-medium shadow-inner">
+                📸 [PLACE YOUR HIGH-QUALITY COLORFUL AI IMAGE HERE]
+            </div>
+
+            <!-- Bullet Study Notes -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold border-b pb-2">Key Core Concepts:</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li><strong>Chemical Equation:</strong> 6CO₂ + 6H₂O + Sunlight → C₆H₁₂O₆ + 6O₂</li>
+                    <li><strong>Light Reactions:</strong> Occurs in the thylakoid membranes of chloroplasts; splits water molecules.</li>
+                    <li><strong>Dark Reactions (Calvin Cycle):</strong> Occurs in the stroma; fixes carbon dioxide into sugar.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TRANSPIRATION NOTES -->
+        <section id="transpiration-notes" class="hidden mt-4 bg-white p-6 rounded-xl shadow-md border border-gray-100">
+            <button onclick="showPage('biology-page')" class="text-emerald-600 hover:underline mb-4 block font-medium cursor-pointer">← Back to Chapters</button>
+            <h2 class="text-2xl font-bold text-teal-700 mb-2">Plant Transpiration Summary</h2>
+            <p class="text-gray-600 text-sm mb-6">Water Movement & Loss System</p>
+            
+            <div class="w-full bg-blue-50 border border-blue-200 text-blue-900 rounded-xl p-8 mb-6 text-center font-medium shadow-inner">
+                📸 [PLACE YOUR HIGH-QUALITY WATER CYCLE AI IMAGE HERE]
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold border-b pb-2">Key Core Concepts:</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li><strong>Definition:</strong> The process of water movement through a plant and its evaporation from aerial parts, especially leaves.</li>
+                    <li><strong>Stomata Action:</strong> Guard cells swell to open stomata during the day, facilitating gas exchange and water loss.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Navigation Logic Script -->
+    <script>
+        function showPage(pageId) {
+            // Hide all sections
+            document.getElementById('homepage').classList.add('hidden');
+            document.getElementById('biology-page').classList.add('hidden');
+            document.getElementById('photosynthesis-notes').classList.add('hidden');
+            document.getElementById('transpiration-notes').classList.add('hidden');
+            
+            // Show the selected section
+            document.getElementById(pageId).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
